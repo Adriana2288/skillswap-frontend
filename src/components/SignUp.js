@@ -33,7 +33,7 @@ class CreateProfile extends Component {
     };
 
     axios
-      .post("http://localhost:5001/api/profile", JSON.stringify(data), {
+      .post("http://localhost:5001/api/signup", JSON.stringify(data), {
         headers: {
           "Content-Type": "application/json",
         },
