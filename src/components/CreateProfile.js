@@ -5,34 +5,47 @@ class CreateProfile extends Component {
     constructor () {
         super ()
         this.state = {
-            name: "",
-            age: "",
-            description: ""
+            username: "",
+            email: "",
+            age: ""
         }
     }
     
-  onChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
+  onChangeName = e => {
+    this.setState({ username: e.target.value });
   };
+
+  onChangeEmail = e => {
+    this.setState({ email: e.target.value });
+  };
+
+  onChangeAge = e => {
+    this.setState({ age: e.target.value });
+  };
+
 
   onSubmit = e => {
     e.preventDefault();
   
 
 const data = {
-    name: this.state.name,
-    age: this.state.age,
-    description: this.state.description
+  username: this.state.username,
+  email: this.state.email,
+  age: this.state.age
   }
 
   axios
-  .post("http://localhost:5001/api/profile", data)
+  .post("http://localhost:5001/api/profile", JSON.stringify(data), {
+    headers: {
+    'Content-Type': 'application/json'
+    }
+    })
   .then(res => {
       console.log(res)
       this.setState({
-          name: "",
-          age: "",
-          description: ""
+        username: "",
+        email: "",
+        age: ""
       })
       this.props.history.push("/")
   })
@@ -45,11 +58,23 @@ render () {
     return (
         <div className="container">
             <form onSubmit={this.onSubmit}>
+
         <label>
           Name:
-          <input type="text" value={this.state.value} onChange={this.onChange} />
+          <input type="text" value={this.state.username} onChange={this.onChangeName} />
+        </label>
+        
+        <label>
+          Email:
+          <input type="text" value={this.state.email} onChange={this.onChangeEmail} />
+        </label>
+        
+        <label>
+          Age:
+          <input type="text" value={this.state.age} onChange={this.onChangeAge} />
         </label>
         <input type="submit" value="Submit" />
+        
       </form>
         </div>
     )
