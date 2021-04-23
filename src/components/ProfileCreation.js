@@ -4,7 +4,7 @@ import axios from "axios";
 class ProfileCreation extends Component {
   constructor() {
     <div>
-      <h1>Homepage</h1>
+      <h1>Profile creation page</h1>
     </div>;
   }
 }
