@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-class CreateProfile extends Component {
+class CreateAccount extends Component {
   constructor() {
     super();
     this.state = {
@@ -76,7 +76,6 @@ class CreateProfile extends Component {
     return (
       <div className="container">
         <form onSubmit={this.onSubmit}>
-
           <label>
             First name:
             <input
@@ -85,7 +84,7 @@ class CreateProfile extends Component {
               onChange={this.onChangeFirstName}
             />
           </label>
-          <br/>
+          <br />
           <label>
             Last name:
             <input
@@ -94,7 +93,7 @@ class CreateProfile extends Component {
               onChange={this.onChangeLastName}
             />
           </label>
-          <br/>
+          <br />
           <label>
             Username:
             <input
@@ -103,7 +102,7 @@ class CreateProfile extends Component {
               onChange={this.onChangeUserName}
             />
           </label>
-          <br/>
+          <br />
           <label>
             Password:
             <input
@@ -112,7 +111,7 @@ class CreateProfile extends Component {
               onChange={this.onChangePassword}
             />
           </label>
-          <br/>
+          <br />
           <label>
             Email:
             <input
@@ -121,7 +120,7 @@ class CreateProfile extends Component {
               onChange={this.onChangeEmail}
             />
           </label>
-          <br/>
+          <br />
           <label>
             Age:
             <input
@@ -130,7 +129,7 @@ class CreateProfile extends Component {
               onChange={this.onChangeAge}
             />
           </label>
-          <br/>
+          <br />
           <input type="submit" value="Submit" />
         </form>
       </div>
@@ -138,4 +137,4 @@ class CreateProfile extends Component {
   }
 }
 
-export default CreateProfile;
+export default CreateAccount;
