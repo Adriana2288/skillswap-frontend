@@ -1,16 +1,17 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-class CreateProfile extends Component {
+class Registration extends Component {
   constructor() {
     super();
     this.state = {
       first_name: "",
       last_name: "",
       username: "",
-      password: "",
-      email: "",
       age: "",
+      email: "",
+      password: "",
+      repeat_password: "",
     };
   }
   onChangeFirstName = (e) => {
@@ -25,16 +26,20 @@ class CreateProfile extends Component {
     this.setState({ username: e.target.value });
   };
 
-  onChangePassword = (e) => {
-    this.setState({ password: e.target.value });
+  onChangeAge = (e) => {
+    this.setState({ age: e.target.value });
   };
 
   onChangeEmail = (e) => {
     this.setState({ email: e.target.value });
   };
 
-  onChangeAge = (e) => {
-    this.setState({ age: e.target.value });
+  onChangePassword = (e) => {
+    this.setState({ password: e.target.value });
+  };
+
+  onChangeRepeatPassword = (e) => {
+    this.setState({ repeat_password: e.target.value });
   };
 
   onSubmit = (e) => {
@@ -44,13 +49,14 @@ class CreateProfile extends Component {
       first_name: this.state.first_name,
       last_name: this.state.last_name,
       username: this.state.username,
-      password: this.state.password,
-      email: this.state.email,
       age: this.state.age,
+      email: this.state.email,
+      password: this.state.password,
+      repeat_password: this.state.repeat_password,
     };
 
     axios
-      .post("http://localhost:5001/api/signup", JSON.stringify(data), {
+      .post("http://localhost:3000/api/user/signup", JSON.stringify(data), {
         headers: {
           "Content-Type": "application/json",
         },
@@ -61,9 +67,10 @@ class CreateProfile extends Component {
           first_name: "",
           last_name: "",
           username: "",
-          password: "",
-          email: "",
           age: "",
+          email: "",
+          password: "",
+          repeat_password: ""
         });
         this.props.history.push("/");
       })
@@ -105,11 +112,11 @@ class CreateProfile extends Component {
           </label>
           <br/>
           <label>
-            Password:
+            Age:
             <input
               type="text"
-              value={this.state.password}
-              onChange={this.onChangePassword}
+              value={this.state.age}
+              onChange={this.onChangeAge}
             />
           </label>
           <br/>
@@ -123,14 +130,24 @@ class CreateProfile extends Component {
           </label>
           <br/>
           <label>
-            Age:
+            Password:
             <input
-              type="text"
-              value={this.state.age}
-              onChange={this.onChangeAge}
+              type="password"
+              value={this.state.password}
+              onChange={this.onChangePassword}
             />
           </label>
           <br/>
+          <label>
+            Please verify your password:
+            <input
+              type="password"
+              value={this.state.repeat_password}
+              onChange={this.onChangeRepeatPassword}
+            />
+          </label>
+          <br/>
+       
           <input type="submit" value="Submit" />
         </form>
       </div>
@@ -138,4 +155,4 @@ class CreateProfile extends Component {
   }
 }
 
-export default CreateProfile;
+export default Registration;
