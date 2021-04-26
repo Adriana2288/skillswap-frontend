@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import axios from "axios";
 
 class About extends Component {
-  constructor() {
-    <div>
-      <h1>About Us</h1>
-    </div>;
+  render() {
+    return (
+      <div>
+        <h1>About Us</h1>
+      </div>
+    );
   }
 }
 
