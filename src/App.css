@@ -1,5 +1,124 @@
-ul {
+
+nav.navbar {
+  background: #2F303A;
+}
+
+.navbar-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  padding: 0.6rem;
+}
+
+.navbar-toggler {
+  padding: .25rem .75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  color: rgba(0,0,0,.5);
+  border-color: rgba(0,0,0,.1);
+}
+
+.navbar-toggler-icon {
+
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+  background-size: 100% 100%;
+}
+
+ul.links-list {
+  display: flex;
+  flex-direction: row;
+}
+
+li.nav-item {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
+  margin-left: 40px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-family: Poppins;
+font-style: normal;
+font-weight: normal;
+font-size: 30px;
+
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+}
+
+nav a.is-active {
+  color: purple
+}
+
+.container {
+ width: 80%;
+ margin: 0 auto;
+}
+
+@media only screen and (min-width: 992px) {
+  .navbar-toggler {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .navbar-toggler {
+    display: block;
+  }
+
+  div.navbar-links {
+    margin-right: 0;
+    position: absolute;
+    width: 75%;
+    background:#2F303A;
+    z-index: 99;
+    margin-top: 3rem;
+    float: right;
+    right: 0;
+    height: 100vh;
+    transition: all ease-in-out 0.3s;
+    align-self: flex-start;
+    border-top: 50px purple;
+  }
+
+  ul.links-list {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+  }
+
+  .navbar-links.menu-collapse {
+    margin-right: -75%;
+    width: 0;
+    overflow: hidden;
+  }
+
+  li.nav-item {
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 0;
+  }
+
+  li.nav-item a.nav-link {
+      padding: 10px 20px;
+  }
+
+  .menu-collapse {
+    margin-right: -75%;
+    width: 0;
+    overflow: hidden;
+  }
 }

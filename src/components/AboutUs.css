@@ -1,0 +1,46 @@
+.title {
+    position: absolute;
+    width: 843px;
+    height: 121px;
+    left: 675px;
+    top: 220px;
+    
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 72px;
+    line-height: 108px;
+    display: flex;
+    align-items: center;
+    
+    color: #FFFFFF;
+    
+}
+
+.paragraph {
+    position: absolute;
+    width: 1188px;
+    height: 486px;
+    left: 673px;
+    top: 402px;
+    
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 54px;
+    display: flex;
+    align-items: center;
+    
+    color: #FFFFFF;
+}
+
+* {
+    position: absolute;
+width: 559px;
+height: 633px;
+left: 45px;
+top: 287px;
+
+background: url(meeting-img.png);
+}
