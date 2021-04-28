@@ -88,7 +88,7 @@ class Registration extends Component {
 
       </section>
 
-      <h2 className="createAcc"> Create Account</h2>
+      <h2 className="createAcc"> Create an Account</h2>
       <main className="signup_main"> 
     
       <div className="container">
@@ -161,7 +161,7 @@ class Registration extends Component {
           <button type="submit" value="Submit">Next</button>
         </form>
       </div>
-      <img src={logo} alt="logo"/>
+      <img className="logo" src={logo} alt="logo"/>
       </main>
       </div>
     );
