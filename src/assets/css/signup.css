@@ -1,0 +1,43 @@
+
+.wrapper {
+    width: 100%;
+    border: 1px solid white;
+    height: 100vh;
+    padding: 25px 50px;
+}
+
+.signup_navbar {
+    width: 100%;
+    border: 1px solid green;
+    height: 50px;
+
+}
+
+.container {
+    width: 367px;
+    height: 488px;
+    /* border: 1px solid red; Check how big container is*/
+}
+
+.login_form {
+    width: 100%;
+}
+
+.login_form label {
+    color: white;
+    font-family: Poppins;
+}
+
+.login_form input {
+    width: 100%;
+    background-color: lightgrey;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+.login_form button {
+    width: 25%;
+    border-radius: 12px;
+    background-color: #1E5F9A;
+    color: white;
+}

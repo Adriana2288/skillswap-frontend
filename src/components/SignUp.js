@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import "../assets/css/signup.css";
 
 class Registration extends Component {
   constructor() {
@@ -81,8 +82,13 @@ class Registration extends Component {
 
   render() {
     return (
+      <div className="wrapper">
+      <section className="signup_navbar"> 
+
+      </section>
+      
       <div className="container">
-        <form onSubmit={this.onSubmit}>
+        <form className="login_form" onSubmit={this.onSubmit}>
 
           <label>
             First name:
@@ -148,8 +154,9 @@ class Registration extends Component {
           </label>
           <br/>
        
-          <input type="submit" value="Submit" />
+          <button type="submit" value="Submit">Next</button>
         </form>
+      </div>
       </div>
     );
   }

@@ -4,6 +4,7 @@ import AboutUs from "./components/AboutUs";
 import SignUp from "./components/SignUp";
 import LogIn from "./components/LogIn";
 import LandingPage from "./components/LandingPage";
+import "./App.css";
 
 
 class App extends Component {
