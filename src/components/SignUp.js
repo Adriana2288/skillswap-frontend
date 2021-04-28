@@ -64,7 +64,6 @@ class Registration extends Component {
         },
       })
       .then((res) => {
-        console.log(res);
         this.setState({
           first_name: "",
           last_name: "",
