@@ -4,6 +4,7 @@ import SignUp from "./components/SignUp";
 import LogIn from "./components/LogIn";
 import About from "./components/AboutUs";
 import Landing from "./components/LandingPage";
+import Profile from "./components/Profile";
 
 class App extends Component {
   render() {
@@ -14,6 +15,9 @@ class App extends Component {
           <Route path="/api/login" component={LogIn} />
           <Route path="/aboutus" component={About} />
           <Route path="/LandingPage" component={Landing} />
+          <Route path="/signup" component={SignUp} />
+          <Route path="/login" component={LogIn} />
+          <Route path="/profile" component={Profile} />
         </div>
       </Router>
     );
