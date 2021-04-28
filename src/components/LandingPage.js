@@ -8,8 +8,8 @@ class Landing extends Component {
     return(
       <div>
     <div>
-      <h1 className="createH1"> Create an Account </h1>
-      <h2> Exchange your time with others to learn new skills.</h2>
+      <h1 className="landing-title"> Skill Swap With Others</h1>
+      <h2 className="landing-paragraph"> Exchange your time with others to learn new skills.</h2>
     </div>
 
     <div>
@@ -22,7 +22,7 @@ class Landing extends Component {
 
 
     <div>
-        <img src={logo} />
+        <img src={logo} className="handShake"/>
     </div>
 
 </div>

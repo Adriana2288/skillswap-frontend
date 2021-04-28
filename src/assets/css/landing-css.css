@@ -4,8 +4,68 @@
     background: #2F303A;
 }
 
+.handShake {
+    position: absolute;
+    width: 752px;
+    height: 356px;
+    left: 73px;
+    top: 450px;
+}
 
+.landing-title {
+    position: absolute;
+    width: 802px;
+    height: 96px;
+    left: 967px;
+    top: 365px;
 
-/* .createH1 {
-    background-color: #2F303A; 
-} */
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 72px;
+    line-height: 108px;
+
+    color: #FFFFFF;
+}
+
+.landing-paragraph {
+    position: absolute;
+    width: 959px;
+    height: 70px;
+    left: 935px;
+    top: 495px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 54px;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+.btn-signup {
+    position: absolute;
+    width: 257px;
+    height: 74px;
+    left: 970px;
+    top: 652px;
+    color: white;
+    font-family: Poppins;
+
+    background: linear-gradient(180deg, #1762A7 0%, rgba(219, 20, 199, 0) 100%);
+    border-radius: 10px;
+
+}
+
+.btn-signup:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+.btn-signup:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
