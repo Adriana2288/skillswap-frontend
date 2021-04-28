@@ -1,13 +1,14 @@
 import axios from "axios";
 import React, { Component } from "react";
 import logo from '../images/Logo.png';
+import "../assets/css/landing-css.css";
 
 class Landing extends Component {
   render() {
     return(
       <div>
     <div>
-      <h1> Create an Account </h1>
+      <h1 className="createH1"> Create an Account </h1>
       <h2> Exchange your time with others to learn new skills.</h2>
     </div>
 
