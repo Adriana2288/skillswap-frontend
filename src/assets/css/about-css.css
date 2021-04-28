@@ -1,0 +1,45 @@
+.aboutUs {
+    position: absolute;
+    width: 581px;
+    height: 136px;
+    left: 675px;
+    top: 220px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 72px;
+    line-height: 108px;
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
+}
+
+
+.skillswapDescription {
+    position: absolute;
+    width: 1188px;
+    height: 486px;
+    left: 673px;
+    top: 402px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 30px;
+    line-height: 54px;
+    display: flex;
+    align-items: center;
+
+    color: #ffffff;
+}
+
+
+.picture {
+    position: absolute;
+    width: 559px;
+    height: 633px;
+    left: 45px;
+    top: 287px;
+}
