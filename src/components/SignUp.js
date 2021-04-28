@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
+import "../assets/css/signup.css";
+import logo from '../images/Logo.png';
 
 class Registration extends Component {
   constructor() {
@@ -80,8 +82,16 @@ class Registration extends Component {
 
   render() {
     return (
+      <div className="wrapper">
+      <section className="signup_navbar"> 
+
+      </section>
+
+      <h2 className="createAcc"> Create an Account</h2>
+      <main className="signup_main"> 
+    
       <div className="container">
-        <form onSubmit={this.onSubmit}>
+        <form className="login_form" onSubmit={this.onSubmit}>
 
           <label>
             First name:
@@ -147,8 +157,11 @@ class Registration extends Component {
           </label>
           <br/>
        
-          <input type="submit" value="Submit" />
+          <button type="submit" value="Submit">Next</button>
         </form>
+      </div>
+      <img className="logo" src={logo} alt="logo"/>
+      </main>
       </div>
     );
   }
