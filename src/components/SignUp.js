@@ -84,7 +84,7 @@ class Registration extends Component {
   render() {
     return (
       <div className="wrapper">
-        <section className="signup_navbar"></section>
+        {/* <section className="signup_navbar"></section> */}
 
         <h2 className="createAcc"> Create an Account</h2>
         <main className="signup_main">
@@ -153,8 +153,8 @@ class Registration extends Component {
                 />
               </label>
               <br />
-              <input type="submit" value="Submit" />
             </form>
+            <input className="submitbtn" type="submit" value="Submit" />
           </div>
           <img className="card" src={card} alt="logo" />
         </main>

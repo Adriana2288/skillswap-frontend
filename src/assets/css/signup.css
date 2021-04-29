@@ -7,12 +7,12 @@
 
 }
 
-.signup_navbar {
+/* .signup_navbar {
     width: 100%;
     border: 1px solid green;
     height: 50px;
 
-}
+} */
 
 .container {
     width: 367px;
@@ -36,7 +36,7 @@
     margin-bottom: 10px;
 }
 
-.submit button {
+.submitbtn {
     width: 25%;
     border-radius: 12px;
     background-color: #1E5F9A;
