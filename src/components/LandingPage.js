@@ -17,14 +17,16 @@ class Landing extends Component {
         </div>
 
         <div>
-          <button
-            className="btn-signup"
-            // style={buttonStyle}
-            onClick={this.props.handleClick}
-          >
-            {" "}
-            Begin Swapping
-          </button>
+          <a href="/signup">
+            <button
+              className="btn-signup"
+              // style={buttonStyle}
+              onClick={this.props.handleClick}
+            >
+              {" "}
+              Begin Swapping
+            </button>
+          </a>
         </div>
 
         <div>

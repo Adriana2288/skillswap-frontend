@@ -36,14 +36,8 @@ import Profile from "./components/Profile";
 import LogIn from "./components/LogIn";
 import AboutUs from "./components/AboutUs";
 import Landing from "./components/LandingPage";
-import React, { useRef, useEffect } from "react";
-import {
-  BrowserRouter,
-  NavLink,
-  Switch,
-  Route,
-  useLocation,
-} from "react-router-dom";
+import React, { useRef } from "react";
+import { BrowserRouter, NavLink, Switch, Route } from "react-router-dom";
 import "./App.css";
 
 function App() {
@@ -123,11 +117,11 @@ function App() {
 }
 
 function AllRoutes({ hideMenu }) {
-  let location = useLocation();
+  /*let location = useLocation();
   useEffect(() => {
     hideMenu();
   }, [location]);
-
+  */
   return (
     <Switch>
       <Route path="/AboutUs" component={AboutUs}></Route>
