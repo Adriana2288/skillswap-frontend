@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import "../assets/css/login.css";
 
 class LogIn extends Component {
     constructor() {
@@ -48,9 +49,9 @@ class LogIn extends Component {
     render() {
       return (
         <div className="container">
-          <form onSubmit={this.onSubmit}>
+          <form className="login_interface" onSubmit={this.onSubmit}>
            <label>
-              Email:
+              Email/Username: <br/>
               <input
                 type="text"
                 value={this.state.email}
@@ -59,7 +60,7 @@ class LogIn extends Component {
             </label>
             <br/>
             <label>
-              Password:
+              Password:<br/>
               <input
                 type="password"
                 value={this.state.password}
@@ -67,8 +68,8 @@ class LogIn extends Component {
               />
             </label>
             <br/>        
-            <input type="submit" value="Submit" />
-          </form>
+          </form><br/>
+          <input className="loginbtn2" type="submit" value="Log In" />
         </div>
       );
     }
