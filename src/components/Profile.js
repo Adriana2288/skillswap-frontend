@@ -1,16 +1,16 @@
 import React, { Component } from "react"
 import axios from "axios"
 import { CountryDropdown } from 'react-country-region-selector'
+import { withRouter } from 'react-router-dom';
 
 
 
 class Profile extends Component {
-    constructor (props) {
-        super (props)
-        console.log(props.userId)
+    constructor () {
+        super ()
         this.state = {
-            userId: props.location.state.userId,
-            profileImg: "",
+            // userId: props.location.state.userId,
+            // profileImg: "",
             country: "",
             bio: "",
             skills: [],
@@ -48,22 +48,22 @@ class Profile extends Component {
         this.setState({ interests: interestsArr })
     }
 
-    handleImg = (event) => {
-        console.log("image")
-        let file = event.target.files[0]
-        let reader = new FileReader()
-        reader.readAsDataURL(file)
-        reader.addEventListener("load", () => {
-        this.setState({ profileImg: reader.result})
-        })
-    }
+    // handleImg = (event) => {
+    //     console.log("image")
+    //     let file = event.target.files[0]
+    //     let reader = new FileReader()
+    //     reader.readAsDataURL(file)
+    //     reader.addEventListener("load", () => {
+    //     this.setState({ profileImg: reader.result})
+    //     })
+    // }
 
     onSubmit = (val) => {
         val.preventDefault()
 
         const data = {
-            userId: this.state.userId,
-            profileImg: this.state.profileImg,
+            // userId: this.state.userId,
+            // profileImg: this.state.profileImg,
             country: this.state.country,
             bio: this.state.bio,
             skills: this.state.skills,
@@ -79,24 +79,27 @@ class Profile extends Component {
             },
           })
           .then((res) => {
+            console.log(res)
             this.setState({
-
+            //   userId: "",
               country: "",
               bio: "",
               skills: [],
               interests: [],
             });
-            this.props.history.push("/")
+            this.props.history.push({
+                pathname: '/profile',
+                search: '?query=userId',
+                // state: { userId: res.data.user} 
+              })
           })
           .catch((error) => {
             console.log(error)
           })
     }
 
-    componentDidMount() {
 
-
-     }
+   
 
     render () {
 
@@ -106,7 +109,7 @@ class Profile extends Component {
             <div>
                 <form onSubmit={this.onSubmit}>
 
-                    <input type="file" name="file" onChange={this.handleImg}/>
+                    {/* <input type="file" name="file" onChange={this.handleImg}/> */}
 
                     <label>
                         Please select your country:
@@ -183,4 +186,5 @@ class Profile extends Component {
     }
 }
 
-export default Profile
+export default withRouter(Profile);
+
