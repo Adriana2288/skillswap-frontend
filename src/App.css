@@ -39,7 +39,7 @@ ul.links-list {
 li.nav-item {
   list-style-type: none;
   margin-left: 40px;
-}
+} 
 
 nav a {
   text-decoration: none;
@@ -118,4 +118,9 @@ nav a.is-active {
     width: 0;
     overflow: hidden;
   }
+}
+
+.brand-title {
+  font-size: 36px;
+  font-weight:600;
 }
