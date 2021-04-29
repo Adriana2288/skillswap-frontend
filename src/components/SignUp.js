@@ -146,12 +146,13 @@ class Registration extends Component {
                 />
               </label>
               <br />
+
               
             
               <input type="submit" value="Submit"/>
             
 
-                Next
+
             </form>
           </div>
           <img className="logo" src={logo} alt="logo" />

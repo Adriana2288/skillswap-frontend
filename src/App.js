@@ -43,6 +43,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+
 import "./App.css";
 
 function App() {
@@ -122,10 +123,6 @@ function App() {
 }
 
 function AllRoutes({ hideMenu }) {
-  // let location = useLocation();
-  // useEffect(() => {
-  //   hideMenu();
-  // }, [location]);
 
   return (
     <Switch>
