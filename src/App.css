@@ -56,7 +56,7 @@ nav a {
 }
 
 nav a.is-active {
-  color: purple;
+  color: rgb(23, 245, 234);
 }
 
 .container {
@@ -87,7 +87,7 @@ nav a.is-active {
     height: 100vh;
     transition: all ease-in-out 0.3s;
     align-self: flex-start;
-    border-top: 50px purple;
+    border-top: 50px rgb(41, 241, 141);
   }
 
   ul.links-list {
