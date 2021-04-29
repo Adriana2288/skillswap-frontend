@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "../assets/css/signup.css";
-import logo from "../images/Logo.png";
+import card from "../images/Namecard.png";
+
 
 class Registration extends Component {
   constructor() {
@@ -90,7 +91,7 @@ class Registration extends Component {
           <div className="container">
             <form className="login_form" onSubmit={this.onSubmit}>
               <label>
-                First name:
+                First name: <br />
                 <input
                   type="text"
                   value={this.state.first_name}
@@ -99,7 +100,7 @@ class Registration extends Component {
               </label>
               <br />
               <label>
-                Last name:
+                Last name: <br />
                 <input
                   type="text"
                   value={this.state.last_name}
@@ -108,7 +109,7 @@ class Registration extends Component {
               </label>
               <br />
               <label>
-                Username:
+                Username: <br />
                 <input
                   type="text"
                   value={this.state.username}
@@ -117,7 +118,7 @@ class Registration extends Component {
               </label>
               <br />
               <label>
-                Age:
+                Age:  <br />
                 <input
                   type="text"
                   value={this.state.age}
@@ -126,7 +127,7 @@ class Registration extends Component {
               </label>
               <br />
               <label>
-                Email:
+                Email: <br />
                 <input
                   type="text"
                   value={this.state.email}
@@ -135,7 +136,7 @@ class Registration extends Component {
               </label>
               <br />
               <label>
-                Password:
+                Password: <br />
                 <input
                   type="password"
                   value={this.state.password}
@@ -144,7 +145,7 @@ class Registration extends Component {
               </label>
               <br />
               <label>
-                Please verify your password:
+                Please verify your password: <br />
                 <input
                   type="password"
                   value={this.state.repeat_password}
@@ -155,7 +156,7 @@ class Registration extends Component {
               <input type="submit" value="Submit" />
             </form>
           </div>
-          <img className="logo" src={logo} alt="logo" />
+          <img className="card" src={card} alt="logo" />
         </main>
       </div>
     );
