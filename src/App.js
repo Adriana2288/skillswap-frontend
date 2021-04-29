@@ -36,13 +36,12 @@ import Profile from "./components/Profile";
 import LogIn from "./components/LogIn";
 import AboutUs from "./components/AboutUs";
 import Landing from "./components/LandingPage";
-import React, { useRef, useEffect } from "react";
+import React, { useRef, } from "react";
 import {
   BrowserRouter,
   NavLink,
   Switch,
   Route,
-  useLocation,
 } from "react-router-dom";
 import "./App.css";
 
@@ -91,7 +90,7 @@ function App() {
                     activeClassName="is-active"
                     exact={true}
                     className="nav-link"
-                    to="/SignUp"
+                    to="/signup"
                   >
                     SignUp
                   </NavLink>
@@ -123,18 +122,18 @@ function App() {
 }
 
 function AllRoutes({ hideMenu }) {
-  let location = useLocation();
-  useEffect(() => {
-    hideMenu();
-  }, [location]);
+  // let location = useLocation();
+  // useEffect(() => {
+  //   hideMenu();
+  // }, [location]);
 
   return (
     <Switch>
       <Route path="/AboutUs" component={AboutUs}></Route>
-      <Route path="/SignUp" component={SignUp}></Route>
-      <Route path="/Profile" component={Profile}></Route>
+      <Route path="/signup" component={SignUp}></Route>
+      <Route path="/profile" component={Profile}></Route>
       <Route path="/Landing" component={Landing}></Route>
-      <Route path="/LogIn" component={LogIn}></Route>
+      <Route path="/login" component={LogIn}></Route>
     </Switch>
   );
 }
