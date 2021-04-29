@@ -152,10 +152,7 @@ class Registration extends Component {
                 />
               </label>
               <br />
-
-              <button type="submit" value="Submit">
-                Next
-              </button>
+              <input type="submit" value="Submit" />
             </form>
           </div>
           <img className="logo" src={logo} alt="logo" />
