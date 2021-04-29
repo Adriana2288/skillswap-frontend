@@ -7,7 +7,10 @@ import { CountryDropdown } from 'react-country-region-selector'
 class Profile extends Component {
     constructor (props) {
         super (props)
+        console.log(props.userId)
         this.state = {
+            userId: props.location.state.userId,
+            profileImg: "",
             country: "",
             bio: "",
             skills: [],
@@ -45,24 +48,39 @@ class Profile extends Component {
         this.setState({ interests: interestsArr })
     }
 
+    handleImg = (event) => {
+        console.log("image")
+        let file = event.target.files[0]
+        let reader = new FileReader()
+        reader.readAsDataURL(file)
+        reader.addEventListener("load", () => {
+        this.setState({ profileImg: reader.result})
+        })
+    }
+
     onSubmit = (val) => {
         val.preventDefault()
 
         const data = {
+            userId: this.state.userId,
+            profileImg: this.state.profileImg,
             country: this.state.country,
             bio: this.state.bio,
             skills: this.state.skills,
             interests: this.state.interests
         }
 
+        
+
         axios
-        .post("http://localhost:5000/api/profile/registration",  JSON.stringify(data), {
+        .post("http://localhost:3000/api/profile/registration",  JSON.stringify(data), {
             headers: {
               "Content-Type": "application/json",
             },
           })
           .then((res) => {
             this.setState({
+
               country: "",
               bio: "",
               skills: [],
@@ -75,11 +93,20 @@ class Profile extends Component {
           })
     }
 
+    componentDidMount() {
+
+
+     }
+
     render () {
+
+        
         const { country } = this.state
         return (
             <div>
                 <form onSubmit={this.onSubmit}>
+
+                    <input type="file" name="file" onChange={this.handleImg}/>
 
                     <label>
                         Please select your country:
@@ -149,10 +176,6 @@ class Profile extends Component {
 
                      <br/>        
             <input type="submit" value="Submit" />
-
-                     
-
-                    
 
                 </form>
             </div>

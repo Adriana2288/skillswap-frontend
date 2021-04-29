@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import "../assets/css/signup.css";
 import logo from "../images/Logo.png";
+import { withRouter } from 'react-router-dom';
 
 class Registration extends Component {
   constructor() {
@@ -13,7 +14,6 @@ class Registration extends Component {
       age: "",
       email: "",
       password: "",
-      repeat_password: "",
     };
   }
   onChangeFirstName = (e) => {
@@ -40,9 +40,7 @@ class Registration extends Component {
     this.setState({ password: e.target.value });
   };
 
-  onChangeRepeatPassword = (e) => {
-    this.setState({ repeat_password: e.target.value });
-  };
+
 
   onSubmit = (e) => {
     e.preventDefault();
@@ -54,16 +52,16 @@ class Registration extends Component {
       age: this.state.age,
       email: this.state.email,
       password: this.state.password,
-      repeat_password: this.state.repeat_password,
     };
 
     axios
-      .post("http://localhost:3000/signup", JSON.stringify(data), {
+      .post("http://localhost:3000/api/user/signup", JSON.stringify(data), {
         headers: {
           "Content-Type": "application/json",
         },
       })
       .then((res) => {
+        console.log(res)
         this.setState({
           first_name: "",
           last_name: "",
@@ -71,9 +69,14 @@ class Registration extends Component {
           age: "",
           email: "",
           password: "",
-          repeat_password: "",
+        
         });
-        this.props.history.push("/");
+        console.log(res.data.user)
+        this.props.history.push({
+          pathname: '/profile',
+          search: '?query=userId',
+          state: { userId: res.data.user} 
+        })
       })
       .catch((error) => {
         console.log(error);
@@ -143,16 +146,13 @@ class Registration extends Component {
                 />
               </label>
               <br />
-              <label>
-                Please verify your password:
-                <input
-                  type="password"
-                  value={this.state.repeat_password}
-                  onChange={this.onChangeRepeatPassword}
-                />
-              </label>
-              <br />
-              <input type="submit" value="Submit" />
+
+              
+            
+              <input type="submit" value="Submit"/>
+            
+
+
             </form>
           </div>
           <img className="logo" src={logo} alt="logo" />
@@ -162,4 +162,4 @@ class Registration extends Component {
   }
 }
 
-export default Registration;
+export default withRouter(Registration);
