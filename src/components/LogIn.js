@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "../assets/css/login.css";
+import { withRouter } from 'react-router-dom';
 
 class LogIn extends Component {
   constructor() {
@@ -27,17 +28,35 @@ class LogIn extends Component {
       password: this.state.password,
     };
 
-    axios
-      .post("http://localhost:3000/api/user/login", JSON.stringify(data), {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-      .then((res) => {
-        console.log(res);
-        this.setState({
-          email: "",
-          password: "",
+  
+    onSubmit = (e) => {
+      e.preventDefault();
+  
+      const data = {
+        email: this.state.email,
+        password: this.state.password,
+      };
+  
+      axios
+        .post("http://localhost:3000/api/user/login", JSON.stringify(data), {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+        .then((res) => {
+          console.log(res);
+          this.setState({
+            email: "",
+            password: ""
+          });
+          this.props.history.push({
+            pathname: '/userProfile',
+            search: '?query=userId',
+          });
+        })
+        .catch((error) => {
+          console.log(error);
+
         });
         this.props.history.push("/");
       })
@@ -76,6 +95,6 @@ class LogIn extends Component {
       </div>
     );
   }
-}
 
-export default LogIn;
+  export default withRouter(LogIn);
+
