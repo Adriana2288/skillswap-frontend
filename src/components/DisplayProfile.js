@@ -15,8 +15,8 @@ class DisplayProfile extends Component {
         }
     }
 
-   fetchUserProfile(user_id) {
-
+   fetchUserProfile = (user_id) => {
+      axios.get()
    } 
 
    componentDidMount() {
