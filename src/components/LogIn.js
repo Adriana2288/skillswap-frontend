@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { withRouter } from 'react-router-dom';
 
 class LogIn extends Component {
     constructor() {
@@ -38,7 +39,10 @@ class LogIn extends Component {
             email: "",
             password: ""
           });
-          this.props.history.push("/");
+          this.props.history.push({
+            pathname: '/userProfile',
+            search: '?query=userId',
+          });
         })
         .catch((error) => {
           console.log(error);
@@ -74,4 +78,4 @@ class LogIn extends Component {
     }
   }
   
-  export default LogIn;
+  export default withRouter(LogIn);

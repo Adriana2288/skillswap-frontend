@@ -19,32 +19,23 @@ class Registration extends Component {
   onChangeFirstName = (e) => {
     this.setState({ first_name: e.target.value });
   };
-
   onChangeLastName = (e) => {
     this.setState({ last_name: e.target.value });
   };
-
   onChangeUserName = (e) => {
     this.setState({ username: e.target.value });
   };
-
   onChangeAge = (e) => {
     this.setState({ age: e.target.value });
   };
-
   onChangeEmail = (e) => {
     this.setState({ email: e.target.value });
   };
-
   onChangePassword = (e) => {
     this.setState({ password: e.target.value });
   };
-
-
-
   onSubmit = (e) => {
     e.preventDefault();
-
     const data = {
       first_name: this.state.first_name,
       last_name: this.state.last_name,
@@ -53,7 +44,6 @@ class Registration extends Component {
       email: this.state.email,
       password: this.state.password,
     };
-
     axios
       .post("http://localhost:3000/api/user/signup", JSON.stringify(data), {
         headers: {
@@ -69,7 +59,6 @@ class Registration extends Component {
           age: "",
           email: "",
           password: "",
-        
         });
         console.log(res.data.user)
         this.props.history.push({
@@ -82,12 +71,10 @@ class Registration extends Component {
         console.log(error);
       });
   };
-
   render() {
     return (
       <div className="wrapper">
         <section className="signup_navbar"></section>
-
         <h2 className="createAcc"> Create an Account</h2>
         <main className="signup_main">
           <div className="container">
@@ -146,13 +133,8 @@ class Registration extends Component {
                 />
               </label>
               <br />
-
-              
-            
               <input type="submit" value="Submit"/>
-            
-
-
+                Next
             </form>
           </div>
           <img className="logo" src={logo} alt="logo" />
@@ -161,5 +143,4 @@ class Registration extends Component {
     );
   }
 }
-
 export default withRouter(Registration);
