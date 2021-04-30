@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import "../assets/css/signup.css";
 import logo from "../images/Logo.png";
-import { withRouter } from 'react-router-dom';
+import { withRouter } from "react-router-dom";
 
 class Registration extends Component {
   constructor() {
@@ -40,8 +40,6 @@ class Registration extends Component {
     this.setState({ password: e.target.value });
   };
 
-
-
   onSubmit = (e) => {
     e.preventDefault();
 
@@ -61,7 +59,7 @@ class Registration extends Component {
         },
       })
       .then((res) => {
-        console.log(res)
+        console.log(res);
         this.setState({
           first_name: "",
           last_name: "",
@@ -69,14 +67,13 @@ class Registration extends Component {
           age: "",
           email: "",
           password: "",
-        
         });
-        console.log(res.data.user)
+        console.log(res.data.user);
         this.props.history.push({
-          pathname: '/profile',
-          search: '?query=userId',
-          state: { userId: res.data.user} 
-        })
+          pathname: "/profile",
+          search: "?query=userId",
+          state: { userId: res.data.user },
+        });
       })
       .catch((error) => {
         console.log(error);
@@ -93,69 +90,71 @@ class Registration extends Component {
           <div className="container">
             <form className="login_form" onSubmit={this.onSubmit}>
               <label>
-                First name:
+                <h1>Signup:</h1>
                 <input
                   type="text"
+                  name=""
+                  placeholder="First Name"
                   value={this.state.first_name}
                   onChange={this.onChangeFirstName}
                 />
               </label>
               <br />
               <label>
-                Last name:
                 <input
                   type="text"
+                  name=""
+                  placeholder="Last Name"
                   value={this.state.last_name}
                   onChange={this.onChangeLastName}
                 />
               </label>
               <br />
               <label>
-                Username:
                 <input
                   type="text"
+                  name=""
+                  placeholder="Username"
                   value={this.state.username}
                   onChange={this.onChangeUserName}
                 />
               </label>
               <br />
               <label>
-                Age:
                 <input
                   type="text"
+                  name=""
+                  placeholder="Age"
                   value={this.state.age}
                   onChange={this.onChangeAge}
                 />
               </label>
               <br />
               <label>
-                Email:
                 <input
                   type="text"
+                  name=""
+                  placeholder="Email"
                   value={this.state.email}
                   onChange={this.onChangeEmail}
                 />
               </label>
               <br />
               <label>
-                Password:
                 <input
                   type="password"
+                  name=""
+                  placeholder="Password"
                   value={this.state.password}
                   onChange={this.onChangePassword}
                 />
               </label>
               <br />
 
-              
-            
-              <input type="submit" value="Submit"/>
-            
-
-
+              <input className="submitbtn" type="submit" value="Submit" />
             </form>
           </div>
-          <img className="logo" src={logo} alt="logo" />
+          <img className="card" src={logo} alt="logo" />
         </main>
       </div>
     );

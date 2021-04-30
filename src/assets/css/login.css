@@ -10,7 +10,7 @@
   text-align: center;
 }
 
-.login_form {
+.login_interface {
   position: flex;
   width: 50%;
   padding: 40px;
@@ -21,20 +21,20 @@
   text-align: center;
 }
 
-.login_form label {
+.login_interface label {
   color: white;
   font-family: Poppins;
   position: left;
 }
 
-.login_form h1 {
+.login_interface h1 {
   color: white;
   text-transform: uppercase;
   font-weight: 500;
 }
 
-.login_form input[type="text"],
-.login_form input[type="password"] {
+.login_interface input[type="text"],
+.login_interface input[type="password"] {
   border: 0;
   background: none;
   display: block;
@@ -49,13 +49,13 @@
   transition: 0.25s;
 }
 
-.login_form input[type="text"]:focus,
-.login_form input[type="password"]:focus {
+.login_interface input[type="text"]:focus,
+.login_interface input[type="password"]:focus {
   width: 280px;
   border-color: #2ecc71;
 }
 
-.login_form input[type="submit"] {
+.login_interface input[type="submit"] {
   border: 0;
   background: none;
   display: block;
@@ -70,6 +70,6 @@
   cursor: pointer;
 }
 
-.login_form input[type="submit"]:hover {
+.login_interface input[type="submit"]:hover {
   background: #2ecc71;
 }
