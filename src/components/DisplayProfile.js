@@ -10,13 +10,20 @@ class DisplayProfile extends Component {
             user_id: this.props.user_id,
             country: this.props.country,
             bio: this.props.bio,
-            skills: this.state.skills,
-            interests: this.state.interests
+            skills: this.props.skills,
+            interests: this.props.interests
         }
     }
 
    fetchUserProfile = (user_id) => {
-      axios.get()
+      axios.get("http://localhost:3000/api/profile/userProfile/608b3367a8a78a2bd82ff551")
+      .then((res) => {
+        console.log(res)
+        
+      })
+      .catch((error) => {
+        console.log(error);
+      });
    } 
 
    componentDidMount() {
@@ -47,7 +54,8 @@ class DisplayProfile extends Component {
     render () {
         return (
             <div>
-                <h1>Hello</h1>
+                <h1>Welcome to SkillSwap!</h1>
+            
             </div>
         )
     }
